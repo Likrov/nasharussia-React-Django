@@ -46,15 +46,15 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script>
-      var path = window.location.pathname
-      var idRegex = /(?<nash_messageid>\d+)/
-      var match = path.match(idRegex)
+      let path = window.location.pathname
+      let idRegex = /(?<nash_messageid>\d+)/
+      let match = path.match(idRegex)
       if (match) {
-        var nash_messageId = match.groups.nash_messageid
-        var nashaEl = document.getElementById("nasharus")
+        let nash_messageId = match.groups.nash_messageid
+        let nashaEl = document.getElementById("nasharus")
         nashaEl.className = 'd-none'
-        var nash_messageEl = "<div class='nasharus-detail' data-nash_message-id=" + nash_messageId + " data-class-name='col-6 mx-auto'></div>"
-        var mainContainer = document.getElementById("nash_message-container")
+        let nash_messageEl = "<div class='nasharus-detail' data-nash_message-id=" + nash_messageId + " data-class-name='col-6 mx-auto'></div>"
+        let mainContainer = document.getElementById("nash_message-container")
         mainContainer.innerHTML = nash_messageEl
       }
       

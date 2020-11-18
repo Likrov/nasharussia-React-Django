@@ -39,11 +39,11 @@ this is amazing!!!!
 <script>
 
 function getCookie(name) {
-    var cookieValue = null;
+    let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = cookies[i].trim();
+        let cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i].trim();
             // Does this cookie string begin with the name we want?
             if (cookie.substring(0, name.length + 1) === (name + '=')) {
                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
@@ -57,7 +57,7 @@ function getCookie(name) {
 
 
 function handleNash_messageFormError(msg, display){
-    var myErrorDiv = document.getElementById("nash_message-create-form-error")
+    let myErrorDiv = document.getElementById("nash_message-create-form-error")
     if (display === true) {
         // show error
         myErrorDiv.setAttribute("class", "d-block alert alert-danger")
@@ -135,11 +135,11 @@ function loadNash-message(nash-messageElement) {
     xhr.onload = function() {
         const serverResponse = xhr.response
         const listedItems = serverResponse // array
-        var finalNash_messageStr = ""
-        var i;
+        let finalNash_messageStr = ""
+        let i;
         for (i=0;i<listedItems.length; i++) {
-            var nash_messageObj = listedItems[i]
-            var currentItem = formatNash_messageElement(nash_messageObj)
+            let nash_messageObj = listedItems[i]
+            let currentItem = formatNash_messageElement(nash_messageObj)
             finalNash_messageStr += currentItem
         }
         nash-messageElement.innerHTML = finalNash_messageStr
@@ -191,7 +191,7 @@ function LikeBtn(nash_message) {
 }
 
 function formatNash_messageElement(nash_message) {
-    var formattedNash_message = "<div class='col-12 col-md-10 mx-auto border rounded py-3 mb-4 nash_message' id='nash_message-" + nash_message.id 
+    let formattedNash_message = "<div class='col-12 col-md-10 mx-auto border rounded py-3 mb-4 nash_message' id='nash_message-" + nash_message.id 
     + "'><p>" + nash_message.content + 
         "</p><div class='btn-group'>" + 
             LikeBtn(nash_message) +
